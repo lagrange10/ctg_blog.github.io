@@ -2,11 +2,18 @@
 <rss version="2.0">
     <channel>
         <title>Hexo</title>
+        <subtitle></subtitle>
+        <icon>http://example.com/images/favicon.ico</icon>
         <link>http://example.com</link>
+        <author>
+          <name>Cotangent</name>
+        </author>
         <description></description>
         <language>en</language>
         <pubDate>Sun, 03 Jul 2022 12:19:50 +0800</pubDate>
         <lastBuildDate>Sun, 03 Jul 2022 12:19:50 +0800</lastBuildDate>
+        <category term="ctg" />
+        <category term="hello" />
         <item>
             <guid isPermalink="true">http://example.com/2022/07/03/hello-world/</guid>
             <title>Hello World</title>

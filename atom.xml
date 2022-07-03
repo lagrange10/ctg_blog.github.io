@@ -2,8 +2,15 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
     <title>Hexo</title>
+    <subtitle></subtitle>
+    <icon>http://example.com/images/favicon.ico</icon>
     <link href="http://example.com" />
+    <author>
+      <name>Cotangent</name>
+    </author>
     <updated>2022-07-03T04:19:50.029Z</updated>
+    <category term="ctg" />
+    <category term="hello" />
     <entry>
         <id>http://example.com/2022/07/03/hello-world/</id>
         <title>Hello World</title>
