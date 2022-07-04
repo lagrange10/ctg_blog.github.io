@@ -42,8 +42,8 @@
 &lt;li&gt;狼 wolf 没有自带武器，但可以抢夺敌人编号最小的武器。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;类的设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#类的设计&#34;&gt;#&lt;/a&gt; 类的设计&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;project-moshou-review.assets/image-20220704234839280.png&#34; alt=&#34;image-20220704234839280&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;project-moshou-review.assets/image-20220704234757640.png&#34; alt=&#34;image-20220704234757640&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220704234839280.png&#34; alt=&#34;image-20220704234839280&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220704234757640.png&#34; alt=&#34;image-20220704234757640&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;整个项目中所有要用到的参数，城市，指挥部都放在 Factory 类中，通过 Factory 类可以访问任何东西。&lt;/p&gt;
 &lt;p&gt;Timer 是一个仅仅有静态变量和方法的类，与其它类也没有关系，因为整个过程中时间是唯一的，不需要实例化。&lt;/p&gt;
 &lt;p&gt;在 Headquarters 中有它目前管理的战士指针数组，即 vector&amp;lt;Warrior*&amp;gt;。战士类派生出五种战士。&lt;/p&gt;
