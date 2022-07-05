@@ -33,7 +33,7 @@
 &lt;p&gt;在很小的一块图像中，运动场是连续的（因此光流也连续）。运动也得是小的运动。&lt;/p&gt;
 &lt;h4 id=&#34;约束方程的推导&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#约束方程的推导&#34;&gt;#&lt;/a&gt; 约束方程的推导&lt;/h4&gt;
 &lt;p&gt;根据亮度不变的假设，使用泰勒展开泰勒展开，有&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;optical-flow/image-20220706004953608.png&#34; alt=&#34;image-20220706004953608&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220706004953608.png&#34; alt=&#34;image-20220706004953608&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;其中 (u,v) 就是所求的光流。然而仅仅一个约束方程无法求解 2 个位置数，因而需要一些求解算法来近似求得光流。其中著名的有 LK 算法（Lucas-Kanade）。&lt;/p&gt;
 &lt;h2 id=&#34;lucas-kanade方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lucas-kanade方法&#34;&gt;#&lt;/a&gt; Lucas-Kanade 方法&lt;/h2&gt;
 </content>
