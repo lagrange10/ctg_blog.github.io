@@ -11,8 +11,10 @@
             "url": "https://lagrange10.github.io/ctg_blog.github.io/2022/07/05/optical-flow/",
             "title": "optical_flow",
             "date_published": "2022-07-05T11:52:11.000Z",
-            "content_html": "",
-            "tags": []
+            "content_html": "<h1 id=\"光流法\"><a class=\"anchor\" href=\"#光流法\">#</a> 光流法</h1>\n<h2 id=\"光流\"><a class=\"anchor\" href=\"#光流\">#</a> 光流</h2>\n<p>#d 光流 1</p>\n<p>图像亮度模式的表观运动（apparent motion）</p>\n<p>#d 光流 2</p>\n<p>看上去是瞬时速率（i.e. 表观运动的速度）</p>\n<p>#d 光流是运动场的简化</p>\n<p>包含了「物体的运动信息」和「物体的三维结构信息」，如何用简化的光流恢复物体的 3d 结构和运动信息是计算机视觉中的一个关键问题。</p>\n<p>#e 光流法的用途</p>\n<p>通常是运动估计，通过光流场可以分离出运动物体，从而完成诸如「行人计数」等工作。</p>\n<p>用估计的运动来达成「图像动画」的效果。</p>\n<h2 id=\"计算光流\"><a class=\"anchor\" href=\"#计算光流\">#</a> 计算光流</h2>\n<h3 id=\"光流约束方程\"><a class=\"anchor\" href=\"#光流约束方程\">#</a> 光流约束方程</h3>\n<h4 id=\"基本假设\"><a class=\"anchor\" href=\"#基本假设\">#</a> 基本假设</h4>\n<p>每个像素点经过运动后亮度不变</p>\n<p>在很小的一块图像中，运动场是连续的（因此光流也连续）。运动也得是小的运动。</p>\n<h4 id=\"约束方程的推导\"><a class=\"anchor\" href=\"#约束方程的推导\">#</a> 约束方程的推导</h4>\n<p>根据亮度不变的假设，使用泰勒展开泰勒展开，有</p>\n<p><img data-src=\"optical-flow/image-20220706004953608.png\" alt=\"image-20220706004953608\" /></p>\n<p>其中 (u,v) 就是所求的光流。然而仅仅一个约束方程无法求解 2 个位置数，因而需要一些求解算法来近似求得光流。其中著名的有 LK 算法（Lucas-Kanade）。</p>\n<h2 id=\"lucas-kanade方法\"><a class=\"anchor\" href=\"#lucas-kanade方法\">#</a> Lucas-Kanade 方法</h2>\n",
+            "tags": [
+                "CV"
+            ]
         },
         {
             "id": "https://lagrange10.github.io/ctg_blog.github.io/2022/07/04/project-moshou-review/",
