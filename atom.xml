@@ -34,36 +34,39 @@
         <id>https://lagrange10.github.io/ctg_blog.github.io/2022/07/06/concept1-texture/</id>
         <title>concept1-texture</title>
         <link rel="alternate" href="https://lagrange10.github.io/ctg_blog.github.io/2022/07/06/concept1-texture/"/>
-        <content type="html">&lt;h1 id=&#34;纹理&#34;&gt;&lt;a href=&#34;#纹理&#34; class=&#34;headerlink&#34; title=&#34;纹理&#34;&gt;&lt;/a&gt;纹理&lt;/h1&gt;&lt;p&gt;#d 物理属性与纹理&lt;/p&gt;
-&lt;p&gt;纹理是由于物体表面的物理属性的多样性而造成的,物理属性不同表示某个特定表面特征的灰度或者颜色信息不同,不同的物理表面会产生不同的纹理图像,因而纹理作为图像的一个极为重要的属性,在计算机视觉和图像处理中占有举足轻重的地位。&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;纹理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#纹理&#34;&gt;#&lt;/a&gt; 纹理&lt;/h1&gt;
+&lt;p&gt;#d 物理属性与纹理&lt;/p&gt;
+&lt;p&gt;纹理是由于物体表面的物理属性的多样性而造成的，物理属性不同表示某个特定表面特征的灰度或者颜色信息不同，不同的物理表面会产生不同的纹理图像，因而纹理作为图像的一个极为重要的属性，在计算机视觉和图像处理中占有举足轻重的地位。&lt;/p&gt;
 &lt;p&gt;#d 纹理&lt;/p&gt;
-&lt;p&gt;纹理是图像中特征值强度的某种&lt;strong&gt;局部重复模式&lt;/strong&gt;的宏观表现。然而,对于自然纹理图像而言这种重复模式往往是近似的和复杂的,难以用语言描述,而人类对纹理的感受多是与心理效果相结合的,因此,迄今都没有一个对纹理的正式的、广泛认可的和一致的定义。&lt;/p&gt;
-&lt;p&gt;Hawkins曾经对纹理给出了一个比较详细的描述,他认为纹理有三个主要的标志:&lt;/p&gt;
+&lt;p&gt;纹理是图像中特征值强度的某种&lt;strong&gt;局部重复模式&lt;/strong&gt;的宏观表现。然而，对于自然纹理图像而言这种重复模式往往是近似的和复杂的，难以用语言描述，而人类对纹理的感受多是与心理效果相结合的，因此，迄今都没有一个对纹理的正式的、广泛认可的和一致的定义。&lt;/p&gt;
+&lt;p&gt;Hawkins 曾经对纹理给出了一个比较详细的描述，他认为纹理有三个主要的标志:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;某种局部的序列性在比该序列更大的区域内不断重复。&lt;/li&gt;
 &lt;li&gt;序列是由基本元素非随机排列组成的。&lt;/li&gt;
-&lt;li&gt;各部分大致是均匀的统体,在纹理区域内的任何地方都有大致相同的结构尺。&lt;/li&gt;
+&lt;li&gt;各部分大致是均匀的统体，在纹理区域内的任何地方都有大致相同的结构尺。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;除了下面这种规则的纹理，也有不规则的，然而对于纹理（texture）的关注，其意义或者用途在于：Texture-related tasks。&lt;/p&gt;
 &lt;p&gt;#e 纹理相关工作&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;shape from texture。 从纹理中恢复形状。&lt;/li&gt;
-&lt;li&gt;segmentation&amp;#x2F;classification from texture cues。纹理分析&lt;/li&gt;
+&lt;li&gt;segmentation/classification from texture cues。纹理分析&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;/ctg_blog.github.io/concept1-texture/v2-a803b5d3c0c17be7cff2147d82799bd8_1440w.jpg&#34; alt=&#34;img&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;v2-a803b5d3c0c17be7cff2147d82799bd8_1440w.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;synthesis。用于图像合成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;#d 分析纹理的原因&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;often indicative of a material’s properties；通常指示材料的特性&lt;/li&gt;
-&lt;li&gt;can be important appearance cue, especially if shape is similar across objects；&lt;br&gt;可能是重要的外观提示，尤其是当对象之间的形状相似时&lt;/li&gt;
+&lt;li&gt;often indicative of a material&#39;s properties；通常指示材料的特性&lt;/li&gt;
+&lt;li&gt;can be important appearance cue, especially if shape is similar across objects；&lt;br /&gt;
+可能是重要的外观提示，尤其是当对象之间的形状相似时&lt;/li&gt;
 &lt;li&gt;aim to distinguish between shape, boundaries, and texture；旨在区分形状，边界和纹理&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;验证&#34;&gt;&lt;a href=&#34;#验证&#34; class=&#34;headerlink&#34; title=&#34;验证&#34;&gt;&lt;/a&gt;验证&lt;/h1&gt;&lt;p&gt;#d 纹理&lt;/p&gt;
+&lt;h1 id=&#34;验证&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#验证&#34;&gt;#&lt;/a&gt; 验证&lt;/h1&gt;
+&lt;p&gt;#d 纹理&lt;/p&gt;
 &lt;p&gt;纹理是某种反复出现的图像模式，能反映材料的物理特性。可以用于图像修补，图像合成等。&lt;/p&gt;
 &lt;p&gt;#e 纹理&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;/ctg_blog.github.io/concept1-texture/v2-048ec3ab515e23f3ccbb448766df8be4_r.jpg&#34; alt=&#34;preview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;v2-048ec3ab515e23f3ccbb448766df8be4_r.jpg&#34; alt=&#34;preview&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="CV" scheme="https://lagrange10.github.io/ctg_blog.github.io/tags/CV/" />
         <updated>2022-07-06T02:55:43.000Z</updated>
