@@ -34,12 +34,14 @@
 &lt;h2 id=&#34;计算光流&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计算光流&#34;&gt;#&lt;/a&gt; 计算光流&lt;/h2&gt;
 &lt;h3 id=&#34;光流约束方程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#光流约束方程&#34;&gt;#&lt;/a&gt; 光流约束方程&lt;/h3&gt;
 &lt;h4 id=&#34;基本假设&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本假设&#34;&gt;#&lt;/a&gt; 基本假设&lt;/h4&gt;
-&lt;p&gt;每个像素点经过运动后亮度不变&lt;/p&gt;
-&lt;p&gt;在很小的一块图像中，运动场是连续的（因此光流也连续）。运动也得是小的运动。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每个像素点经过运动后亮度不变&lt;/li&gt;
+&lt;li&gt;在很小的一块图像中，运动场是连续的（因此光流也连续）。运动也得是小的运动。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h4 id=&#34;约束方程的推导&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#约束方程的推导&#34;&gt;#&lt;/a&gt; 约束方程的推导&lt;/h4&gt;
 &lt;p&gt;根据亮度不变的假设，使用泰勒展开泰勒展开，有&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;image-20220706004953608.png&#34; alt=&#34;image-20220706004953608&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;其中 (u,v) 就是所求的光流。然而仅仅一个约束方程无法求解 2 个位置数，因而需要一些求解算法来近似求得光流。其中著名的有 LK 算法（Lucas-Kanade）。&lt;/p&gt;
+&lt;p&gt;其中 (u,v) 就是所求的光流。然而仅仅一个约束方程无法求解 2 个未知数，因而需要一些求解算法来近似求得光流。其中著名的有 LK 算法（Lucas-Kanade）。&lt;/p&gt;
 &lt;h2 id=&#34;lucas-kanade方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#lucas-kanade方法&#34;&gt;#&lt;/a&gt; Lucas-Kanade 方法&lt;/h2&gt;
  ]]></description>
         </item>
@@ -98,23 +100,6 @@
 &lt;li&gt;尽量在组合成的类中有指向父类的指针，方便操作，父子能相互访问。&lt;/li&gt;
 &lt;li&gt;大胆用指针，比如 new 一个战士出来，加到 vector 中。&lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">https://lagrange10.github.io/ctg_blog.github.io/2022/07/03/hello-world/</guid>
-            <title>Hello World</title>
-            <link>https://lagrange10.github.io/ctg_blog.github.io/2022/07/03/hello-world/</link>
-            <pubDate>Sun, 03 Jul 2022 12:19:50 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo new &lt;span class=&#34;token string&#34;&gt;&#34;My New Post&#34;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo server&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo generate&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;span&gt;h&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;$ hexo deploy&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
