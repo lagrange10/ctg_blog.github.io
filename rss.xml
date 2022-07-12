@@ -10,10 +10,34 @@
         </author>
         <description></description>
         <language>en</language>
-        <pubDate>Wed, 06 Jul 2022 11:30:51 +0800</pubDate>
-        <lastBuildDate>Wed, 06 Jul 2022 11:30:51 +0800</lastBuildDate>
+        <pubDate>Mon, 11 Jul 2022 11:24:13 +0800</pubDate>
+        <lastBuildDate>Mon, 11 Jul 2022 11:24:13 +0800</lastBuildDate>
         <category term="ctg" />
         <category term="hello" />
+        <item>
+            <guid isPermalink="true">https://lagrange10.github.io/ctg_blog.github.io/2022/07/11/DeepLearning1-basic/</guid>
+            <title>DeepLearning1_basic</title>
+            <link>https://lagrange10.github.io/ctg_blog.github.io/2022/07/11/DeepLearning1-basic/</link>
+            <category term="DeepLearning" scheme="https://lagrange10.github.io/ctg_blog.github.io/tags/DeepLearning/" />
+            <pubDate>Mon, 11 Jul 2022 11:24:13 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;资源&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#资源&#34;&gt;#&lt;/a&gt; 资源&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;课程主页：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jb3Vyc2VzLmQyTC5haS96aC12Mg==&#34;&gt;https://courses.d2L.ai/zh-v2&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;教材：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aC12Mi5kMkwuYWkv&#34;&gt;https://zh-v2.d2L.ai/&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;课程论坛讨论：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaXNjdXNzLmQyTC5haS9jLzE2&#34;&gt;https://discuss.d2L.ai/c/16&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;Pytorch 论坛：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kaXNjdXNzLnB5dG9yY2gub3JnLw==&#34;&gt;https://discuss.pytorch.org/&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;数据处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据处理&#34;&gt;#&lt;/a&gt; 数据处理&lt;/h1&gt;
+&lt;h2 id=&#34;缺失数据处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#缺失数据处理&#34;&gt;#&lt;/a&gt; 缺失数据处理&lt;/h2&gt;
+&lt;p&gt;通常采用插值、删除。&lt;/p&gt;
+&lt;p&gt;对数据进行插值时，不能对字符串这类数据插值为平均值。&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;inputs &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; inputs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;fillna&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;inputs&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;mean&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;因此可以将 NAN 视为一个类别，从而转化为一个张量格式。&lt;/p&gt;
+&lt;h3 id=&#34;独热编码one-hot-encode&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#独热编码one-hot-encode&#34;&gt;#&lt;/a&gt; 独热编码 (one-hot encode)&lt;/h3&gt;
+&lt;p&gt;通常，将「代表类型的数据」存储为 0，1，2 可以减少开销，但机器学习中存在大量加权平均的操作，这样会在加权平均后暗含 “2” 比 “0”，“1” 要 “好” 的意思，相当于强加了一个偏序关系。&lt;/p&gt;
+&lt;p&gt;因此，对于不含偏序关系的类别采用独热编码，将类型视为一个特征，可以解决上面的问题。&lt;/p&gt;
+&lt;p&gt;在上面的例子中，把 Pave，NAN 类型转换为独热编码，解决了插值问题。&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;figcaption data-lang=&#34;python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;NumRooms Alley&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;3.0&lt;/span&gt;  Pave&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;2.0&lt;/span&gt;   NaN&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;4.0&lt;/span&gt;   NaN&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;3.0&lt;/span&gt;   NaN&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;inputs &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; pd&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;get_dummies&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;inputs&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;dummy_na&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;   NumRooms  Alley_Pave  Alley_nan&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;3.0&lt;/span&gt;           &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;          &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;2.0&lt;/span&gt;           &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;          &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;2&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;4.0&lt;/span&gt;           &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;          &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token number&#34;&gt;3&lt;/span&gt;       &lt;span class=&#34;token number&#34;&gt;3.0&lt;/span&gt;           &lt;span class=&#34;token number&#34;&gt;0&lt;/span&gt;          &lt;span class=&#34;token number&#34;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">https://lagrange10.github.io/ctg_blog.github.io/2022/07/06/concept2-semantic/</guid>
             <title>concept2-semantic</title>
