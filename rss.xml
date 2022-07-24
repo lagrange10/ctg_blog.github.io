@@ -20,17 +20,63 @@
             <link>https://lagrange10.github.io/ctg_blog.github.io/2022/07/19/Week2-ModuleSeclect-md/</link>
             <category term="DeepLearning" scheme="https://lagrange10.github.io/ctg_blog.github.io/tags/DeepLearning/" />
             <pubDate>Tue, 19 Jul 2022 08:32:39 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;模型选择&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型选择&#34;&gt;#&lt;/a&gt; 模型选择&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719084448495.png&#34; alt=&#34;image-20220719084448495&#34; /&gt;&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;疑问&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#疑问&#34;&gt;#&lt;/a&gt; 疑问&lt;/h1&gt;
+&lt;h1 id=&#34;学习成果&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#学习成果&#34;&gt;#&lt;/a&gt; 学习成果&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;关于模型性能的学习（理论较多）&lt;/li&gt;
+&lt;li&gt;去实践了一个小项目&lt;/li&gt;
+&lt;li&gt;阅读了 Geomagnetism for Smartphone-Based Indoor Localization: Challenges, Advances, and Comparisons 的 Introduction（5 页）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;地磁定位&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#地磁定位&#34;&gt;#&lt;/a&gt; 地磁定位&lt;/h1&gt;
+&lt;h2 id=&#34;介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍&#34;&gt;#&lt;/a&gt; 介绍&lt;/h2&gt;
+&lt;p&gt;基于智能手机的室内定位是一个实用的研究方向。多种信号曾被用于室内定位，包括 Wi-Fi，惯性导航， 图像，磁场，声音等。然而相比其它信号，地磁信号因为它的普遍性和「不依赖额外的设施的特性」受到关注。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220724104303386.png&#34; alt=&#34;image-20220724104303386&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;​                                            &lt;strong&gt;图 1—— 基于地磁的室内定位经济且具有较高的准确率&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;通常，地磁场的扰动可以唯一确定一个位置。地磁场的扰动可以视作自然磁场和铁磁物体产生的磁场的叠加。本文对地磁室内定位（基于智能手机）进行综述，讨论目前的方案、挑战、和前景。&lt;/p&gt;
+&lt;p&gt;具体来说，基于地磁的室内定位有三个阶段：地磁场测量，信号地图（signal map）与数据库建设，目标定位。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220724105438290.png&#34; alt=&#34;image-20220724105438290&#34; /&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;地磁场测量
+&lt;ul&gt;
+&lt;li&gt;用智能手机可以测量，但需要考虑噪音，校准，铁磁材料影响，依赖设备等问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;信号地图与数据库建设
+&lt;ul&gt;
+&lt;li&gt;信号地图表示室内信号与位置的映射关系&lt;/li&gt;
+&lt;li&gt;一个需要大量劳动的工作&lt;/li&gt;
+&lt;li&gt;构建完仍然需要动态更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;目标定位
+&lt;ul&gt;
+&lt;li&gt;在室内定位智能手机的位置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;实践-kaggle房价预测&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实践-kaggle房价预测&#34;&gt;#&lt;/a&gt; 实践 Kaggle 房价预测&lt;/h1&gt;
+&lt;h2 id=&#34;遇到的bug&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#遇到的bug&#34;&gt;#&lt;/a&gt; 遇到的 bug&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;数据集太大导致 get_dummies 方法把训练集搞的太大了以至于内存装不下。
+&lt;ul&gt;
+&lt;li&gt;解决方法：一开始是把所有字符串类全都删去，但是 loss 从 0.6 直接到了 7.6，因此考虑仅仅把数据集中的 &amp;quot;Summary&amp;quot; 字段删去，因为这个字段的内容是卖家对房子的描述，是一个很长的字符串而且没有什么显著的规律。&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;image-20220723162407730.png&#34; alt=&#34;image-20220723162407730&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;image-20220723170737981.png&#34; alt=&#34;image-20220723170737981&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;最后放弃了很多字符串特征，才能装进内存。。 目前误差仍然很大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;模型选择&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型选择&#34;&gt;#&lt;/a&gt; 模型选择&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220719084448495.png&#34; alt=&#34;image-20220719084448495&#34; /&gt;&lt;/p&gt;
 &lt;h2 id=&#34;过拟合和欠拟合&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#过拟合和欠拟合&#34;&gt;#&lt;/a&gt; 过拟合和欠拟合&lt;/h2&gt;
 &lt;h3 id=&#34;模型容量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型容量&#34;&gt;#&lt;/a&gt; 模型容量&lt;/h3&gt;
 &lt;p&gt;拟合数据的能力&lt;/p&gt;
 &lt;p&gt;eg：模型容量小，就不能拟合复杂的训练数据，这种现象也叫做&lt;strong&gt;欠拟合&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;eg：模型容量大，甚至可能记住所有训练数据，但这并不一定好，可能也记住了数据中的噪音，可能过于关注训练数据中的某些细节导致泛化能力并不强。——&lt;strong&gt; 过拟合&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719091320947.png&#34; alt=&#34;image-20220719091320947&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719091328769.png&#34; alt=&#34;image-20220719091328769&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220719091320947.png&#34; alt=&#34;image-20220719091320947&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220719091328769.png&#34; alt=&#34;image-20220719091328769&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;衡量模型容量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#衡量模型容量&#34;&gt;#&lt;/a&gt; 衡量模型容量&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719092020363.png&#34; alt=&#34;image-20220719092020363&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220719092020363.png&#34; alt=&#34;image-20220719092020363&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h3&gt;
 &lt;p&gt;1、模型复杂度需要匹配数据复杂度。&lt;/p&gt;
 &lt;p&gt;2、尽管统计机器学习提供数学工具评判模型复杂度，但实践中一般靠观察训练和验证误差的差距衡量。&lt;/p&gt;
@@ -42,9 +88,28 @@
 &lt;p&gt;将一部分隐藏层输出置 0，一部分缩放，使得数学期望不变。&lt;/p&gt;
 &lt;h2 id=&#34;数值稳定性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数值稳定性&#34;&gt;#&lt;/a&gt; 数值稳定性&lt;/h2&gt;
 &lt;h3 id=&#34;梯度爆炸与消失&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#梯度爆炸与消失&#34;&gt;#&lt;/a&gt; 梯度爆炸与消失&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220722115226661.png&#34; alt=&#34;image-20220722115226661&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220722115238886-16584620287813.png&#34; alt=&#34;image-20220722115238886&#34; /&gt;&lt;/p&gt;
- ]]></description>
+&lt;p&gt;&lt;img data-src=&#34;image-20220722115226661.png&#34; alt=&#34;image-20220722115226661&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220722115238886-16584620287813.png&#34; alt=&#34;image-20220722115238886-16584620287813&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果使用 ReLu 作为激活函数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果 d-t 比较大，那么数值会很大。ReLu 导数不是 1 就是 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用 sigmoid，导数值小于 1，d-t 很大时，累乘导致梯度消失&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;模型初始化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型初始化&#34;&gt;#&lt;/a&gt; 模型初始化&lt;/h3&gt;
+&lt;p&gt;为了让数值稳定，我们希望输出（前向），梯度（反向）的期望和方差都保持一致。因而需要选取合适的「初始模型参数」和「激活函数」。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220722130155830.png&#34; alt=&#34;image-20220722130155830&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;为了保持上述要求，模型应该满足：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220722130246664.png&#34; alt=&#34;image-20220722130246664&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220722130352674.png&#34; alt=&#34;image-20220722130352674&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20220722130352674.png&#34; alt=&#34;image-20220722130352674&#34; /&gt;&lt;/p&gt;
+&lt;h1 id=&#34;python语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#python语法&#34;&gt;#&lt;/a&gt; Python 语法&lt;/h1&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;figcaption data-lang=&#34;Python&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token triple-quoted-string string&#34;&gt;&#39;&#39;&#39;pandas.DataFrame 保留一些列 和 删除一些列&#39;&#39;&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# 例子&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;3&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token comment&#34;&gt;# numeric_features 是索引，一个 array_like 的对象。&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;4&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token triple-quoted-string string&#34;&gt;&#39;&#39;&#39;保留列&#39;&#39;&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;5&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;all_features &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; all_features&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;numeric_features&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;6&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;train_data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; train_data&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;numeric_features&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;7&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;test_data &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; test_data&lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;numeric_features&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;drop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;SalePrice&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;8&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token triple-quoted-string string&#34;&gt;&#39;&#39;&#39;删除列&#39;&#39;&#39;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;9&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;remove_features &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token punctuation&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Summary&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Address&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;High School&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Flooring&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Heating features&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Cooling features&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Laundry features&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Parking features&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;City&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Region&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Heating&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Cooling&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Elementary School&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Bedrooms&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Parking&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Middle School&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Laundry features&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;token string&#34;&gt;&#39;Appliances included&#39;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;]&lt;/span&gt;  &lt;span class=&#34;token comment&#34;&gt;#有些特征所有样本都不一样，无法参考&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;10&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;all_features&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;drop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;columns&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;remove_features&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;inplace&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;11&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;train_data&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;drop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;columns&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;remove_features&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;inplace&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;12&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;test_data&lt;span class=&#34;token punctuation&#34;&gt;.&lt;/span&gt;drop&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;columns&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;remove_features&lt;span class=&#34;token punctuation&#34;&gt;,&lt;/span&gt;inplace&lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;token boolean&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
             <guid isPermalink="true">https://lagrange10.github.io/ctg_blog.github.io/2022/07/11/DeepLearning1-basic/</guid>
