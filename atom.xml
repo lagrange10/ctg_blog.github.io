@@ -8,9 +8,41 @@
     <author>
       <name>Cotangent</name>
     </author>
-    <updated>2022-07-11T03:24:13.000Z</updated>
+    <updated>2022-07-19T00:32:39.000Z</updated>
     <category term="ctg" />
     <category term="hello" />
+    <entry>
+        <id>https://lagrange10.github.io/ctg_blog.github.io/2022/07/19/Week2-ModuleSeclect-md/</id>
+        <title>Week2_ModuleSeclect.md</title>
+        <link rel="alternate" href="https://lagrange10.github.io/ctg_blog.github.io/2022/07/19/Week2-ModuleSeclect-md/"/>
+        <content type="html">&lt;h1 id=&#34;模型选择&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型选择&#34;&gt;#&lt;/a&gt; 模型选择&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719084448495.png&#34; alt=&#34;image-20220719084448495&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;过拟合和欠拟合&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#过拟合和欠拟合&#34;&gt;#&lt;/a&gt; 过拟合和欠拟合&lt;/h2&gt;
+&lt;h3 id=&#34;模型容量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型容量&#34;&gt;#&lt;/a&gt; 模型容量&lt;/h3&gt;
+&lt;p&gt;拟合数据的能力&lt;/p&gt;
+&lt;p&gt;eg：模型容量小，就不能拟合复杂的训练数据，这种现象也叫做&lt;strong&gt;欠拟合&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;eg：模型容量大，甚至可能记住所有训练数据，但这并不一定好，可能也记住了数据中的噪音，可能过于关注训练数据中的某些细节导致泛化能力并不强。——&lt;strong&gt; 过拟合&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719091320947.png&#34; alt=&#34;image-20220719091320947&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719091328769.png&#34; alt=&#34;image-20220719091328769&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;衡量模型容量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#衡量模型容量&#34;&gt;#&lt;/a&gt; 衡量模型容量&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220719092020363.png&#34; alt=&#34;image-20220719092020363&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h3&gt;
+&lt;p&gt;1、模型复杂度需要匹配数据复杂度。&lt;/p&gt;
+&lt;p&gt;2、尽管统计机器学习提供数学工具评判模型复杂度，但实践中一般靠观察训练和验证误差的差距衡量。&lt;/p&gt;
+&lt;h2 id=&#34;控制模型容量&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#控制模型容量&#34;&gt;#&lt;/a&gt; 控制模型容量&lt;/h2&gt;
+&lt;h3 id=&#34;权重衰退&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#权重衰退&#34;&gt;#&lt;/a&gt; 权重衰退&lt;/h3&gt;
+&lt;p&gt;控制参数范围降低模型复杂度，具体来说，希望 w 的 L2 范数更小一些。&lt;/p&gt;
+&lt;p&gt;让 w 偏向于原点。&lt;/p&gt;
+&lt;h3 id=&#34;丢弃法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#丢弃法&#34;&gt;#&lt;/a&gt; 丢弃法&lt;/h3&gt;
+&lt;p&gt;将一部分隐藏层输出置 0，一部分缩放，使得数学期望不变。&lt;/p&gt;
+&lt;h2 id=&#34;数值稳定性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数值稳定性&#34;&gt;#&lt;/a&gt; 数值稳定性&lt;/h2&gt;
+&lt;h3 id=&#34;梯度爆炸与消失&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#梯度爆炸与消失&#34;&gt;#&lt;/a&gt; 梯度爆炸与消失&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220722115226661.png&#34; alt=&#34;image-20220722115226661&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;Week2-ModuleSeclect-md/image-20220722115238886-16584620287813.png&#34; alt=&#34;image-20220722115238886&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="DeepLearning" scheme="https://lagrange10.github.io/ctg_blog.github.io/tags/DeepLearning/" />
+        <updated>2022-07-19T00:32:39.000Z</updated>
+    </entry>
     <entry>
         <id>https://lagrange10.github.io/ctg_blog.github.io/2022/07/11/DeepLearning1-basic/</id>
         <title>DeepLearning1_basic</title>
