@@ -7,6 +7,26 @@
     "home_page_url": "https://lagrange10.github.io/ctg_blog.github.io",
     "items": [
         {
+            "id": "https://lagrange10.github.io/ctg_blog.github.io/2022/11/10/graphics/",
+            "url": "https://lagrange10.github.io/ctg_blog.github.io/2022/11/10/graphics/",
+            "title": "projection",
+            "date_published": "2022-11-10T06:20:02.000Z",
+            "content_html": "<h1 id=\"反走样antialiasing\"><a class=\"anchor\" href=\"#反走样antialiasing\">#</a> 反走样 (antialiasing)</h1>\n<p>rasterization = sample 2D position</p>\n<p>essence: Signals are <strong>changing too fast</strong> (high frequency),  but <strong>sampled too slowly</strong>.</p>\n<h2 id=\"解决方案\"><a class=\"anchor\" href=\"#解决方案\">#</a> 解决方案</h2>\n<p>注意到锯齿效应是像素点要么纯红要么纯黑。(<strong>如果能取中间值？</strong>)</p>\n<p><img data-src=\"graphics/image-20221114152250635.png\" alt=\"image-20221114152250635\" /></p>\n<p>先低通滤波再采样！</p>\n<h3 id=\"信号处理的解释\"><a class=\"anchor\" href=\"#信号处理的解释\">#</a> 信号处理的解释</h3>\n<p>采样 = 在频率域解析延拓。</p>\n<p><img data-src=\"graphics/image-20221114152602646.png\" alt=\"image-20221114152602646\" /></p>\n<p>低通滤波以后进行采样，来避免 “混叠” 的现象</p>\n<p><img data-src=\"graphics/image-20221114152638493.png\" alt=\"image-20221114152638493\" /></p>\n<h3 id=\"实际应用\"><a class=\"anchor\" href=\"#实际应用\">#</a> 实际应用</h3>\n<p><img data-src=\"graphics/image-20221114152958376.png\" alt=\"image-20221114152958376\" /></p>\n<p>用超采样 (e.g.  2x2) 在三角形内部的点的比例代替在三角形内部的面积。据此进行平均操作。</p>\n",
+            "tags": [
+                "graphics"
+            ]
+        },
+        {
+            "id": "https://lagrange10.github.io/ctg_blog.github.io/2022/09/11/SfM/",
+            "url": "https://lagrange10.github.io/ctg_blog.github.io/2022/09/11/SfM/",
+            "title": "SfM",
+            "date_published": "2022-09-11T05:58:39.000Z",
+            "content_html": "<ul>\n<li></li>\n</ul>\n",
+            "tags": [
+                "CV"
+            ]
+        },
+        {
             "id": "https://lagrange10.github.io/ctg_blog.github.io/2022/08/15/git/",
             "url": "https://lagrange10.github.io/ctg_blog.github.io/2022/08/15/git/",
             "title": "git",
