@@ -25,15 +25,15 @@
 &lt;p&gt;essence: Signals are &lt;strong&gt;changing too fast&lt;/strong&gt; (high frequency),  but &lt;strong&gt;sampled too slowly&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;解决方案&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#解决方案&#34;&gt;#&lt;/a&gt; 解决方案&lt;/h2&gt;
 &lt;p&gt;注意到锯齿效应是像素点要么纯红要么纯黑。(&lt;strong&gt;如果能取中间值？&lt;/strong&gt;)&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;graphics/image-20221114152250635.png&#34; alt=&#34;image-20221114152250635&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20221114152250635.png&#34; alt=&#34;image-20221114152250635&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;先低通滤波再采样！&lt;/p&gt;
 &lt;h3 id=&#34;信号处理的解释&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#信号处理的解释&#34;&gt;#&lt;/a&gt; 信号处理的解释&lt;/h3&gt;
 &lt;p&gt;采样 = 在频率域解析延拓。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;graphics/image-20221114152602646.png&#34; alt=&#34;image-20221114152602646&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20221114152602646.png&#34; alt=&#34;image-20221114152602646&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;低通滤波以后进行采样，来避免 “混叠” 的现象&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;graphics/image-20221114152638493.png&#34; alt=&#34;image-20221114152638493&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20221114152638493.png&#34; alt=&#34;image-20221114152638493&#34; /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;实际应用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实际应用&#34;&gt;#&lt;/a&gt; 实际应用&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;graphics/image-20221114152958376.png&#34; alt=&#34;image-20221114152958376&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-20221114152958376.png&#34; alt=&#34;image-20221114152958376&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;用超采样 (e.g.  2x2) 在三角形内部的点的比例代替在三角形内部的面积。据此进行平均操作。&lt;/p&gt;
  ]]></description>
         </item>
