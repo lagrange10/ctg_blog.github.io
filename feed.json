@@ -7,6 +7,16 @@
     "home_page_url": "https://lagrange10.github.io/ctg_blog.github.io",
     "items": [
         {
+            "id": "https://lagrange10.github.io/ctg_blog.github.io/2022/11/14/cmake/",
+            "url": "https://lagrange10.github.io/ctg_blog.github.io/2022/11/14/cmake/",
+            "title": "cmake",
+            "date_published": "2022-11-14T09:22:37.000Z",
+            "content_html": "<h1 id=\"debug\"><a class=\"anchor\" href=\"#debug\">#</a> Debug</h1>\n<p>要在 cmakelist.txt 里面加进入 debug 模式才能命中断点</p>\n<figure class=\"highlight cmake\"><figcaption data-lang=\"CMake\"></figcaption><table><tr><td data-num=\"1\"></td><td><pre><span class=\"token keyword\">set</span><span class=\"token punctuation\">(</span><span class=\"token variable\">CMAKE_CXX_FLAGS</span> <span class=\"token string\">\"<span class=\"token interpolation\"><span class=\"token punctuation\">$&#123;</span><span class=\"token variable\">CMAKE_CXX_FLAGS</span><span class=\"token punctuation\">&#125;</span></span> -g\"</span><span class=\"token punctuation\">)</span></pre></td></tr></table></figure>",
+            "tags": [
+                "cmake"
+            ]
+        },
+        {
             "id": "https://lagrange10.github.io/ctg_blog.github.io/2022/11/10/graphics/",
             "url": "https://lagrange10.github.io/ctg_blog.github.io/2022/11/10/graphics/",
             "title": "projection",
